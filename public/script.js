@@ -31,26 +31,23 @@ function loginWithGoogle() {
     const auth = getAuth()
     signInWithPopup(auth, provider)
         .then((result) => {
-            // Check if the result is not null or undefined.
-            if (!result) {
-                return
-            }
+            if (!result) return
 
             const credential = GoogleAuthProvider.credentialFromResult(result)
             const token = credential.accessToken
             const user = result.user
 
-            // Store the user and token in local storage.
+            // Storing the user and token in local storage.
             localStorage.setItem("user", JSON.stringify(user))
             localStorage.setItem("token", token)
 
             window.location.href = "pages/dashboard/index.html"
         })
         .catch((error) => {
-            // Log the error details to the console.
+            // Logging details to the console.
             console.log(error.code, error.message, error.customData.email)
 
-            // Display a user-friendly error message to the user.
+            // Alert error message to the user.
             const errorMessage = error.message
             if (
                 errorMessage === "auth/account-exists-with-different-credential"
