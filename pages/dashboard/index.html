@@ -1,248 +1,224 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="output.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Portfolio Space | Dashboard</title>
-  </head>
-  <body>
-    <header>
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-          <div class="flex items-center sm:justify-between sm:gap-6">
-              
-              <div>
-                  <img src="logo.svg" alt="">
-              </div>
-            <div class="mt-1">
-                <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl ">
-                  Welcome Back, Barry!
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/output.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Dashboard | Portfolio Space</title>
+        <script type="module" src="/public/firebase.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+                <div
+                    class="flex items-center sm:justify-between gap-4 sm:gap-6">
+                    <img src="../../public/assets/logo.svg" alt="" />
+                    <div class="mt-1">
+                        <h1
+                            class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                            Welcome Back, <span id="header-name"></span>
+                        </h1>
+
+                        <p class="text-sm text-gray-500">
+                            Are you excited to create your portfolio?😃
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-1 items-center justify-between sm:justify-end">
+                        <div
+                            class="group flex shrink-0 items-center rounded-lg transition border px-4 py-2">
+                            <span class="sr-only">Menu</span>
+                            <img
+                                alt="user"
+                                src=""
+                                class="h-10 w-10 rounded-full object-cover max-md:hidden"
+                                id="display-image" />
+
+                            <p
+                                class="ms-2 hidden text-left text-xs sm:block max-md:hidden">
+                                <strong
+                                    class="block font-medium"
+                                    id="displayname"></strong>
+                                <span class="text-gray-500" id="email"></span>
+                            </p>
+
+                            <button
+                                type="button"
+                                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 ml-4"
+                                id="logout-btn">
+                                Log out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bg-white">
+            <div
+                class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 pt-4 border border-gray-100">
+                <h1 class="text-2xl font-bold tracking-tight text-gray-900">
+                    Dashboard
                 </h1>
-          
-                <p class="text-sm text-gray-500">
-                  Are you excited to create your portfolio?😃
-                </p>
-              </div>
+            </div>
+        </div>
+
+        <main class="bg-zinc-100 min-h-[80vh] py-2 max-md:flex max-md:flex-col">
+            <div class="mx-auto max-w-7xl py-4 sm:px-6 lg:px-8 max-sm:mx-8">
+                <h1 class="text-xl inline-block font-medium">Your Projects</h1>
+            </div>
+            <div
+                class="mx-auto max-w-7xl sm:px-6 lg:px-8 grid gap-8 grid-rows-3 grid-cols-4 max-md:grid-cols-1 py-2">
+                <div
+                    class="flex flex-col justify-center items-center rounded-xl transition shadow-sm hover:shadow-lg hover:cursor-pointer bg-white w-50 p-6">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-10 h-12">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="font-semibold pb-3 text-center leading-5">
+                        Create your <br />
+                        portfolio
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <footer
+            class="bg-white mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                <div class="mx-auto max-w-sm lg:ml-0">
+                    <div class="flex gap-4">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Portfolio Space</span>
+                            <img
+                                class="h-8 w-auto"
+                                src="../../public/assets/logo.svg"
+                                alt="" />
+                        </a>
+                        <h1 class="font-bold text-2xl">Portfolio Space</h1>
+                    </div>
+
+                    <p class="mt-4 text-gray-500 lg:text-left lg:text-lg">
+                        Allowing tech or design professionals to craft
+                        personalized showcases in under 15 minutes.
+                    </p>
+
+                    <div class="mt-6 flex gap-4 lg:justify-start">
+                        <a
+                            class="text-gray-700 transition hover:text-gray-700/75"
+                            href="https://github.com/portfolio-space/portfolio-space-web"
+                            target="_blank"
+                            rel="noreferrer">
+                            <span class="sr-only"> GitHub </span>
+                            <svg
+                                class="h-6 w-6"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="flex lg:text-left w-full max-w-sm m-auto lg:max-w-full">
+                    <div class="w-full">
+                        <strong class="font-medium text-gray-900">
+                            About
+                        </strong>
+
+                        <ul class="mt-6 space-y-1">
+                            <li>
+                                <a
+                                    class="text-gray-700 transition hover:text-gray-700/75"
+                                    href="/">
+                                    About
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="text-gray-700 transition hover:text-gray-700/75"
+                                    href="/">
+                                    Our Team
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w-full">
+                        <strong class="font-medium text-gray-900">
+                            Support
+                        </strong>
+
+                        <ul class="mt-6 space-y-1">
+                            <li>
+                                <a
+                                    class="text-gray-700 transition hover:text-gray-700/75"
+                                    href="/">
+                                    FAQs
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="text-gray-700 transition hover:text-gray-700/75"
+                                    href="/">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <div
-              class="flex flex-1 items-center justify-between gap-8 sm:justify-end"
-            >
-              <div class="flex gap-4 max-md:hidden">
-      
-                <a
-                  href="#"
-                  class="block shrink-0 rounded-lg bg-white p-2.5 text-gray-600 shadow-sm hover:text-gray-700"
-                >
-                  <span class="sr-only">Notifications</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                    />
-                  </svg>
-                </a>
-              </div>
-      
-              <button
-                type="button"
-                class="group flex shrink-0 items-center rounded-lg transition"
-              >
-                <span class="sr-only">Menu</span>
-                <img
-                  alt="Man"
-                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                  class="h-10 w-10 rounded-full object-cover max-md:hidden"
-                />
-      
-                <p class="ms-2 hidden text-left text-xs sm:block max-md:hidden">
-                  <strong class="block font-medium">Eric Frusciante</strong>
-      
-                  <span class="text-gray-500"> eric@frusciante.com </span>
+                class="my-4 border-gray-100 pt-6 gap-2 w-full mx-auto max-w-sm lg:flex-row lg:max-w-none grid grid-cols-1 lg:grid-cols-2">
+                <p class="text-s/relaxed text-gray-500">
+                    Created by
+                    <a
+                        href="https://github.com/AlwinSunil"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-gray-700 underline transition hover:text-gray-700/75"
+                        >Alwin</a
+                    >,
+                    <a
+                        href="https://github.com/Anam-Ashraf7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-gray-700 underline transition hover:text-gray-700/75"
+                        >Anam</a
+                    >,
+                    <a
+                        href="https://github.com/AlexCFrost"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-gray-700 underline transition hover:text-gray-700/75"
+                        >Siva Ganesh</a
+                    >.
                 </p>
-              </button>
+                <p class="text-s/relaxed text-gray-500">
+                    © Portfolio Space 2023. All rights reserved.
+                </p>
             </div>
-          </div>
-      
-          
-        </div>
-      </header>
-    <div>
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <header class="bg-white">
-        <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 pt-4 border border-gray-100">
-          <h1 class="text-2xl font-bold tracking-tight text-gray-900">
-            Dashboard
-          </h1>
-        </div>
-      </header>
-      <main class="bg-zinc-100 min-h-[80vh] py-6 max-md:flex max-md:flex-col">
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 max-sm:mx-8 ">
-          <h1 class="text-xl inline-block">Your Projects</h1>
-          <h1 class="text-xl inline-block text-right w-1/2">Sort:</h1>
-        </div>
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 grid gap-y-8 grid-rows-3 grid-cols-4 max-md:grid-cols-1">
-          <div class="flex flex-col justify-center items-center shadow-xl rounded-xl transition hover:shadow-sm bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 w-60 h-32">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-10 h-16"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <p class="font-semibold pb-3">Create a new portfolio</p>
-          </div>
-          <div class="flex flex-col justify-center items-center shadow-xl rounded-xl border-2 border-black bg-[url('')] w-60 h-32">
-          </div>
-          <div class="rounded-xl shadow-xl transition hover:shadow-sm border-black border-2 w-60 h-32"></div>
+        </footer>
+    </body>
 
-          <div class="rounded-xl shadow-xl transition hover:shadow-sm border-black border-2 w-60 h-32">
-              
-        </div>
-        <div class="rounded-xl shadow-xl transition hover:shadow-sm border-black border-2 w-60 h-32">
-            
-        </div>
-        </div>
-    </div>
-      </main>
-  </body>
-  <footer
-    class="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 border-t">
-    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-      <div class="mx-auto max-w-sm lg:ml-0">
-        <div class="flex gap-4">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Portfolio Space</span>
-            <img class="h-8 w-auto" src="./public/assets/logo.svg" alt=""/>
-          </a>
-          <h1 class="font-bold text-2xl">Portfolio Space</h1>
-        </div>
-
-        <p class="mt-4 text-gray-500 lg:text-left lg:text-lg">
-          Allowing tech or design professionals to craft personalized showcases
-          in under 15 minutes.
-        </p>
-
-        <div class="mt-6 flex gap-4 lg:justify-start">
-          <a
-            class="text-gray-700 transition hover:text-gray-700/75"
-            href=""
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="sr-only"> GitHub </span>
-            <svg
-              class="h-6 w-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="flex lg:text-left w-full max-w-sm m-auto lg:max-w-full">
-        <div class="w-full">
-          <strong class="font-medium text-gray-900"> About </strong>
-
-          <ul class="mt-6 space-y-1">
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75"
-                href="/"
-              >
-                About
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75"
-                href="/"
-              >
-                Our Team
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="w-full">
-          <strong class="font-medium text-gray-900"> Support </strong>
-
-          <ul class="mt-6 space-y-1">
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75"
-                href="/"
-              >
-                FAQs
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75"
-                href="/"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="my-4 border-gray-100 pt-6 gap-2 w-full mx-auto max-w-sm lg:flex-row lg:max-w-none grid grid-cols-1 lg:grid-cols-2"
-    >
-      <p class="text-s/relaxed text-gray-500">
-        Created by
-        <a
-          href="https://github.com/AlwinSunil"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-700 underline transition hover:text-gray-700/75"
-          >Alwin</a
-        >,
-        <a
-          href="https://github.com/Anam-Ashraf7"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-700 underline transition hover:text-gray-700/75"
-          >Anam</a
-        >,
-        <a
-          href="https://github.com/AlexCFrost"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-700 underline transition hover:text-gray-700/75"
-          >Siva Ganesh</a
-        >.
-      </p>
-      <p class="text-s/relaxed text-gray-500">
-        © Portfolio Space 2023. All rights reserved.
-      </p>
-    </div>
-  </footer>
+    <script type="module" src="./script.js"></script>
 </html>
