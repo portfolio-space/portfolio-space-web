@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Logic Test</title>
+    </head>
+    <body>
+        <nav class="flex justify-between my-5 mx-5">
+            <div class="flex gap-4">
+                <img
+                    src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a01c85c65d53_Mail%20Icon.svg"
+                    alt="" />
+                <p id="email"></p>
+            </div>
+            <div class="flex gap-4">
+                <p>Work</p>
+                <p>About</p>
+                <p>Services</p>
+                <p>Contact</p>
+            </div>
+        </nav>
+        <div class="flex flex-col items-center my-10 gap-3">
+            <img id="image" class="rounded-full w-52 h-52" src="" alt="" />
+            <p>Hi!,I'm <span id="name"></span> 🤘</p>
+            <p class="w-40 text-lg" id="description"></p>
+            <p id="profession"></p>
+            <button class="bg-black rounded-full w-40 py-5 text-white">
+                Connect With Me
+            </button>
+        </div>
+        <div class="text-center">
+            <h1 class="font-bold text-6xl">skills</h1>
+        </div>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search)
+            const receivedData = urlParams.get("data")
+
+            // Decode the data and parse it back into an object
+            const decodedData = JSON.parse(receivedData)
+            console.log(decodedData)
+
+            // Access and display object properties
+            document.getElementById("name").textContent = decodedData.name
+            document.getElementById("profession").textContent =
+                decodedData.profession
+            document.getElementById("email").textContent = decodedData.email
+            document.getElementById("description").textContent =
+                decodedData.description
+
+            document.currentScript.remove()
+        </script>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/app.css" />
+        <title>Editor | Portfolio Space</title>
+    </head>
+    <body>
+        <header>
+            <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+                <div class="flex items-center sm:justify-between sm:gap-6">
+                    <div>
+                        <img src="logo.svg" alt="" />
+                    </div>
+                    <div class="mt-1">
+                        <h1
+                            class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                            Welcome Back, Barry!
+                        </h1>
+
+                        <p class="text-sm text-gray-500">Continue Editing😃</p>
+                    </div>
+
+                    <div
+                        class="flex flex-1 items-center justify-between gap-8 sm:justify-end">
+                        <button
+                            type="button"
+                            class="group flex shrink-0 items-center rounded-lg transition">
+                            <span class="sr-only">Menu</span>
+                            <img
+                                alt="Man"
+                                src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                class="h-10 w-10 rounded-full object-cover max-md:hidden" />
+
+                            <p
+                                class="ms-2 hidden text-left text-xs sm:block max-md:hidden">
+                                <strong class="block font-medium"
+                                    >Eric Frusciante</strong
+                                >
+
+                                <span class="text-gray-500">
+                                    eric@frusciante.com
+                                </span>
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <header class="bg-white">
+            <div
+                class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 pt-4 border border-gray-100">
+                <h1 class="text-2xl font-bold tracking-tight text-gray-900">
+                    Editor
+                </h1>
+            </div>
+        </header>
+
+        <form class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+            <div class="mb-6">
+                <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Your Name</label
+                >
+                <input
+                    type="text"
+                    id="name"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    placeholder="John Doe"
+                    required />
+            </div>
+            <div class="mb-6">
+                <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Your email</label
+                >
+                <input
+                    type="email"
+                    id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    placeholder="name@gmail.com"
+                    required />
+            </div>
+            <div class="mb-6">
+                <label
+                    for="profession"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Your Profession</label
+                >
+                <input
+                    type="text"
+                    id="profession"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    placeholder="Fullstack Developer"
+                    required />
+            </div>
+            <h1 class="font-medium my-4">Navbar Options</h1>
+            <div class="flex flex-col items-start mb-6">
+                <div class="flex items-center h-5">
+                    <input
+                        id="Work"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                        value="Home"
+                        required />
+                    <label
+                        for="Work"
+                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                        >Work</label
+                    >
+                </div>
+                <div class="flex items-center h-5">
+                    <input
+                        id="About"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                        value="Home"
+                        required />
+                    <label
+                        for="About"
+                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                        >About</label
+                    >
+                </div>
+                <div class="flex items-center h-5">
+                    <input
+                        id="Contact"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                        value="Contact"
+                        required />
+                    <label
+                        for="Contact"
+                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                        >Contact</label
+                    >
+                </div>
+                <div class="flex items-center h-5">
+                    <input
+                        id="Projects"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                        value="Projects"
+                        required />
+                    <label
+                        for="Projects"
+                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                        >Projects</label
+                    >
+                </div>
+            </div>
+            <div class="mb-6">
+                <label
+                    for="description"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Describe Your Self</label
+                >
+                <textarea
+                    name="description"
+                    id="description"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    required>
+                </textarea>
+            </div>
+            <div class="flex items-center h-5 mb-6">
+                <input
+                    id="image"
+                    type="file"
+                    class="w-24 h-7 border border-gray-300 rounded bg-gray-50"
+                    accept="Image/*"
+                    required />
+                <label
+                    for="Projects"
+                    class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                    >Upload your Image</label
+                >
+            </div>
+            <div class="mb-6">
+                <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Your skills</label
+                >
+                <div id="skills">
+                    <input
+                        type="text"
+                        id="name"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                        placeholder="John Doe"
+                        required />
+                </div>
+                <button
+                    class="bg-black rounded-full w-60 my-3 text-white"
+                    id="addskill">
+                    Add
+                </button>
+            </div>
+            <button
+                type="submit"
+                id="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Register new account
+            </button>
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>
