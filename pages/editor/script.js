@@ -6,6 +6,8 @@ let submitBtn = document.getElementById("submit")
 let addSkill = document.getElementById("addskill")
 let skills = document.getElementById("skills")
 
+let file
+
 addSkill.addEventListener("click", addSkills)
 
 function addSkills() {
@@ -29,6 +31,68 @@ function send() {
     window.location.href = "/templates/design-1/index.html?data=" + encodedData
 }
 
-document.getElementById("image").addEventListener("change", function (event) {
-    console.log(event.target.value)
+const fileInput = document.getElementById("image")
+
+fileInput.addEventListener("change", function (event) {
+    const file = event.target.files[0]
+
+    if (file) {
+        const reader = new FileReader()
+
+        reader.onload = function (e) {
+            // Encode the file to a base64 string.
+            const encodedImage = e.target.result
+
+            // Save the encoded image to local storage.
+            localStorage.setItem("encodedImage", encodedImage)
+
+            console.log("Image saved")
+            readImage()
+        }
+
+        reader.readAsDataURL(file)
+    }
 })
+
+function readImage() {
+    const encodedImage = localStorage.getItem("encodedImage")
+
+    if (encodedImage) {
+        // Create a new image element and set the src to the encoded image.
+        const image = new Image()
+        image.src = encodedImage
+
+        // Append the image element to the body.
+        document.body.appendChild(image)
+    }
+}
+
+const user = JSON.parse(localStorage.getItem("user"))
+
+if (!user.email) {
+    localStorage.clear()
+    window.location.href = "index.html"
+}
+
+if (user) {
+    const email = user.email
+    const username = user.displayName
+    const photoURL = user.photoURL
+
+    const [firstName] = username.split(" ")
+
+    console.log(user)
+    console.log(email, username, photoURL)
+
+    const headerNameElem = document.getElementById("header-name")
+    headerNameElem.innerText = firstName
+
+    const displayNameElem = document.getElementById("displayname")
+    displayNameElem.innerText = username
+
+    const emailAddressElem = document.getElementById("email")
+    emailAddressElem.innerText = email
+
+    const displayImgElem = document.getElementById("display-image")
+    displayImgElem.src = photoURL
+}

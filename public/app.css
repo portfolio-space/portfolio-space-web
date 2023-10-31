@@ -2435,6 +2435,11 @@ video {
     padding-bottom: 2rem;
 }
 
+.px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
 .pb-3 {
     padding-bottom: 0.75rem;
 }
@@ -3179,6 +3184,10 @@ video {
     a-z-a--z0-9: \\-\\.$;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @media (min-width: 640px) {
     .sm\:container {
         width: 100%;
@@ -3469,6 +3478,11 @@ video {
         padding-bottom: 12rem;
     }
 
+    .sm\:px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     .sm\:text-3xl {
         font-size: 1.875rem;
         line-height: 2.25rem;
@@ -3575,6 +3589,11 @@ video {
     .lg\:px-8 {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+
+    .lg\:px-10 {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
     }
 
     .lg\:pr-8 {
