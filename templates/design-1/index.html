@@ -1,94 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
-    <title>Logic Test</title>
-</head>
-<body class="font-semibold">
-    <nav class="flex justify-between my-10 mx-10">
-        <div class="flex gap-4">
-            <img src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a01c85c65d53_Mail%20Icon.svg" alt="">
-            <p id="email1"></p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <title>Portfolio</title>
+    </head>
+    <body class="font-semibold">
+        <nav class="flex justify-between my-10 mx-10">
+            <div
+                class="flex gap-4 border items-center px-6 py-3 rounded-full bg-white hover:invert hover:cursor-pointer">
+                <img
+                    src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a01c85c65d53_Mail%20Icon.svg"
+                    alt="" />
+                <a href="mailto:" id="email">contact@developer.com</a>
+            </div>
+            <div class="flex gap-4 items-center">
+                <a href="#projects" class="px-6 py-2 hover:text-slate-500"
+                    >Projects</a
+                >
+                <a href="" class="px-6 py-2 hover:text-slate-500">Services</a>
+                <a href="" class="px-6 py-2 hover:text-slate-500">Contact</a>
+            </div>
+        </nav>
+        <div class="flex flex-col items-center my-24 gap-3">
+            <img id="image" class="rounded-full w-36 h-36" src="" alt="" />
+            <p class="text-2xl py-2 text-slate-800 mt-2">
+                Hi, I'm <span id="name">Developer</span> 🤘
+            </p>
+            <p
+                id="tagline"
+                class="text-center font-bold text-6xl pb-5 tracking-tight">
+                Building digital <br />
+                products, brands, and <br />
+                experience.
+            </p>
+            <a
+                href="#contact"
+                class="bg-black rounded-full w-52 py-5 mb-10 text-white text-center">
+                Connect With Me
+            </a>
         </div>
-        <div class="flex gap-4">
-            <p class="px-6 py-2 hover:text-slate-500">Work</p>
-            <p class="px-6 py-2 hover:text-slate-500">About</p>
-            <p class="px-6 py-2 hover:text-slate-500">Services</p>
-            <p class="px-6 py-2 hover:text-slate-500">Contact</p>
-        </div>
-    </nav>
-    <div class="flex flex-col items-center my-10 gap-3">
-        <img id="image" class="rounded-full w-52 h-52" src="" alt="" >
-        <p class="text-4xl py-5 text-slate-800">Hi,I'm <span id="name"></span> 🤘</p>
-        <p id="tagline" class="text-center text-7xl pb-10">Building digital <br> products, brands, and <br> experience.</p>
-        <p class="w-40 text-lg" id="profession"></p>
-        <button class="bg-black rounded-full w-40 py-5 mb-10 text-white">Connect With Me</button>
-    </div>
-    <hr>
-    
-    <div class="mx-10 my-10">
-        <h1 class="mx-32 font-bold text-4xl">Projects</h1>
-        <div class="grid grid-cols-3 gap-14 my-14 mx-36">
-            <div class="w-80 h-60 border-2 border-black rounded-3xl"></div>
-            <div class="w-80 h-60 border-2 border-black rounded-3xl"></div>
-            <div class="w-80 h-60 border-2 border-black rounded-3xl"></div>
-            <div class="w-80 h-60 border-2 border-black rounded-3xl"></div>
-            <div class="w-80 h-60 border-2 border-black rounded-3xl"></div>
-        </div>
-    </div>
-    <div class="flex flex-col mx-20">
-        <div class="flex flex-col w-full py-20 bg-[url('https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a002c8c65d95_Shapes.svg')] bg-slate-200">
-            <h1 class="font-bold text-4xl text-center pb-10">Services</h1>
-            <div class="flex">
-                <div class="mx-20 w-96 h-80 shadow-lg bg-white">
-                    <h1 class="text-center py-5 text-xl">Strategy</h1>
-                </div>
-                <div class="mx-20 w-96 h-80 shadow-lg bg-white">
-                    <h1 class="text-center py-5 text-xl">Design</h1>
-                </div>
-                <div class="mx-20 w-96 h-80 shadow-lg bg-white">
-                    <h1 class="text-center py-5 text-xl">Mobile App</h1>
+        <hr />
+
+        <div class="px-10 py-10 border-b" id="projects">
+            <h1 class="font-bold text-4xl">Projects</h1>
+            <div class="grid grid-cols-3 gap-10 py-10 px-5 items-center">
+                <div
+                    class="border rounded-md p-4 flex flex-col shadow-md h-fit">
+                    <img
+                        src="https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_FMjpg_UX1000_.jpg"
+                        alt="project"
+                        class="border rounded-md" />
+                    <span class="text-xl mt-5">Ipsum is simply dummy</span>
+                    <span class="text-sm text-gray-700 mt-2"
+                        >Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem ipsum dolor sit amet.</span
+                    >
+                    <button
+                        class="bg-black text-white px-4 py-2 rounded-full mt-4">
+                        Go to project
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const receivedData = urlParams.get('data');
 
-        // Decode the data and parse it back into an object
-        const decodedData = JSON.parse(receivedData);
-        console.log(decodedData)
+        <div class="flex flex-col p-20 border-b">
+            <div
+                class="flex flex-col w-full py-16 bg-[url('https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a002c8c65d95_Shapes.svg')] bg-slate-200">
+                <h1 class="font-bold text-4xl text-center pb-10">Services</h1>
+                <div class="flex gap-8 px-14">
+                    <div
+                        class="shadow-lg bg-white py-14 px-6 rounded-md text-center">
+                        <h1 class="text-center text-xl pb-2">Strategy</h1>
+                        <span class="text-gray-600"
+                            >Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Nesciunt quos voluptas assumenda.</span
+                        >
+                    </div>
+                    <div
+                        class="shadow-lg bg-white py-14 px-6 rounded-md text-center">
+                        <h1 class="text-center text-xl pb-2">Strategy</h1>
+                        <span class="text-gray-600"
+                            >Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Nesciunt quos voluptas assumenda.</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        // Access and display object properties
-        document.getElementById('name').textContent = decodedData.name
-        document.getElementById('profession').textContent = decodedData.profession
-        document.getElementById('email1').textContent = decodedData.email
-        document.getElementById('email2').textContent = decodedData.email
-        document.getElementById('description').textContent = decodedData.description
+        <section
+            id="contact"
+            class="text-center py-20 border-b flex flex-col gap-8">
+            <span class="font-bold text-5xl text-left w-1/2 m-auto"
+                >Contact me</span
+            >
+            <span class="text-3xl text-left w-1/2 m-auto"
+                >Let me know if you want to talk about a potential
+                collaboration. I’m available for freelance work.
+            </span>
+            <a
+                href="mailto:"
+                class="text-3xl text-left w-1/2 m-auto text-blue-700 underline"
+                >contact@developer.com</a
+            >
+        </section>
 
-        document.currentScript.remove();
-    </script>
-</body>
-<footer class="mt-40">
-    <p class="mx-16 text-3xl py-5">Contact Me</p>
-    <div class="flex justify-between mx-10 mb-10">
-    <div class="flex">
-        <img class="px-5" src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a00ed2c65d78_Facebook%20Line.svg" alt="">
-        <img class="px-5" src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a05b98c65d79_Instagram%20Line.svg" alt="">
-        <img class="px-5" src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a04766c65d77_Twitter%20Line%20(1).svg" alt="">
-        <img class="px-5" src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a0082ec65d76_Linkedin%20Line.svg" alt="">
-    </div>
-    <div class="flex">
-        <img src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a01c85c65d53_Mail%20Icon.svg" alt="">
-        <p class="px-5" id="email2"></p>
-    </div>
-</div>
-</footer>
+        <footer
+            class="bg-white mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                <div class="mx-auto max-w-sm lg:ml-0">
+                    <div class="flex gap-4">
+                        <span class="sr-only" id="footer-title"
+                            >Portfolio Space</span
+                        >
+                        <h1 class="font-bold text-2xl">Portfolio Space</h1>
+                    </div>
+
+                    <p
+                        class="mt-4 text-gray-500 lg:text-left lg:text-lg font-medium">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Amet veniam ad.
+                    </p>
+                </div>
+
+                <div
+                    class="flex lg:text-left w-full max-w-sm m-auto lg:max-w-full">
+                    <div class="w-full">
+                        <strong class="font-bold text-gray-900"> Links </strong>
+
+                        <ul class="mt-6 space-y-1">
+                            <li>
+                                <a
+                                    class="text-gray-600 transition hover:text-gray-700/75"
+                                    href="/">
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="text-gray-600 transition hover:text-gray-700/75"
+                                    href="/">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w-full">
+                        <strong class="font-bold text-gray-900">
+                            Socials
+                        </strong>
+
+                        <ul class="mt-6 space-y-1">
+                            <li>
+                                <a
+                                    class="text-gray-600 transition hover:text-gray-700/75"
+                                    href="/">
+                                    Instagram
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="text-gray-600 transition hover:text-gray-700/75"
+                                    href="/">
+                                    Email
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="my-4 border-gray-100 pt-6 gap-2 w-full mx-auto max-w-sm lg:flex-row lg:max-w-none grid grid-cols-1 lg:grid-cols-2">
+                <p class="text-s/relaxed text-gray-500">
+                    © <span id="watermark"></span>. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search)
+            const receivedData = urlParams.get("data")
+
+            // Decode the data and parse it back into an object
+            const decodedData = JSON.parse(receivedData)
+            console.log(decodedData)
+
+            // Access and display object properties
+            document.getElementById("name").textContent = decodedData.name
+            document.getElementById("profession").textContent =
+                decodedData.profession
+            document.getElementById("email1").textContent = decodedData.email
+            document.getElementById("email2").textContent = decodedData.email
+            document.getElementById("description").textContent =
+                decodedData.description
+
+            document.currentScript.remove()
+        </script>
+    </body>
 </html>
