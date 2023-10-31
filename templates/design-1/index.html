@@ -191,21 +191,38 @@
         </style>
 
         <script>
-            function readImage() {
-            const encodedImage = localStorage.getItem("encodedImage")
+            function updateProfileImg() {
+                const encodedImage = localStorage.getItem("encodedImage")
 
-            if (encodedImage) {
-                // Create a new image element and set the src to the encoded image.
-                const image = new Image()
-                image.src = encodedImage
-                image.classList.add("rounded-full", "w-36", "h-36")
-                const profileImage = document.getElementById("profile-image")
-                // Append the image element to the body.
-                profileImage.insertBefore(image,profileImage.firstChild)
+                if (encodedImage) {
+                    const dp_image = new Image()
+                    dp_image.src = encodedImage
+                    dp_image.classList.add("rounded-full", "w-36", "h-36")
+                    const profileImage =
+                        document.getElementById("profile-image")
+                    profileImage.insertBefore(dp_image, profileImage.firstChild)
+                }
             }
-        }
 
-            readImage()
+            updateProfileImg()
+
+            function updateProjects() {
+                const projectIds = JSON.parse(
+                    localStorage.getItem("projectIds"),
+                )
+
+                for (const projectId of projectIds) {
+                    const projectDetails = JSON.parse(
+                        localStorage.getItem(projectId),
+                    )
+
+                    const projectElement = document.getElementById(projectId)
+
+                    projectElement.innerHTML = `<h2>${projectDetails.name}</h2><p>${projectDetails.description}</p>`
+                }
+            }
+
+            updateProjects()
 
             const urlParams = new URLSearchParams(window.location.search)
             const receivedData = urlParams.get("data")
@@ -216,9 +233,11 @@
 
             // Access and display object properties
             document.getElementById("name").textContent = decodedData.name
-            document.getElementById("profession").textContent = decodedData.profession
+            document.getElementById("profession").textContent =
+                decodedData.profession
             document.getElementById("email").textContent = decodedData.email
-            document.getElementById("description").textContent = decodedData.description
+            document.getElementById("description").textContent =
+                decodedData.description
 
             document.currentScript.remove()
         </script>

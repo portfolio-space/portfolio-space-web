@@ -16,13 +16,6 @@ function addSkills() {
 
 addProject.addEventListener("click", addProjects)
 
-function addProjects () {
-    projects.innerHTML += `<input
-    type="text"
-    class="my-3 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
-    required />`
-}
-
 submitBtn.addEventListener("click", function (event) {
     event.preventDefault()
     send()
@@ -34,64 +27,94 @@ function send() {
         email: email.value,
         profession: profession.value,
         description: description.value,
-        projects: []
+        projects: [],
     }
     const encodedData = JSON.stringify(data)
 
     window.location.href = "/templates/design-1/index.html?data=" + encodedData
 }
 
-const fileInput = document.getElementById("profile-image")
+const profileImgUpload = document.getElementById("profile-image")
 
-fileInput.addEventListener("change", function (event) {
+profileImgUpload.addEventListener("change", function (event) {
     const file = event.target.files[0]
 
     if (file) {
         const reader = new FileReader()
 
         reader.onload = function (e) {
-            // Encode the file to a base64 string.
             const encodedImage = e.target.result
-
-            // Save the encoded image to local storage.
             localStorage.setItem("encodedImage", encodedImage)
-
-            console.log("Image saved")
+            console.log("Profile Image saved")
         }
 
         reader.readAsDataURL(file)
     }
 })
 
+let projectCount = 1
 
-const user = JSON.parse(localStorage.getItem("user"))
+const project = []
+let encodeThumbnailImage
 
-if (!user.email) {
-    localStorage.clear()
-    window.location.href = "index.html"
+const projectThumbnail = document.getElementById("project-thumbnail")
+
+projectThumbnail.addEventListener("change", function (event) {
+    const file = event.target.files[0]
+
+    if (file) {
+        const reader = new FileReader()
+
+        reader.readAsDataURL(file)
+
+        reader.onload = function (e) {
+            encodeThumbnailImage = e.target.result
+        }
+    }
+})
+
+function addProjects() {
+    // Get the project details from the input fields.
+    let projectName = document.getElementById("project-name")
+    let projectDesc = document.getElementById("project-desc")
+    let projectLink = document.getElementById("project-link")
+    let projectIdElem = document.getElementById("project-id")
+
+    // Validate the input fields.
+    if (!projectName.value) {
+        alert("Please enter a project name.")
+        return
+    }
+
+    if (!projectDesc.value) {
+        alert("Please enter a project description.")
+        return
+    }
+
+    if (!projectLink.value) {
+        alert("Please enter a project link.")
+        return
+    }
+
+    if (projectThumbnail.files.length != 0) {
+        project.push([
+            projectName.value,
+            projectDesc.value,
+            projectLink.value,
+            encodeThumbnailImage,
+        ])
+        projectCount += 1
+        projectIdElem.innerText = projectCount
+
+        localStorage.setItem(`project-${projectCount}`, JSON.stringify(project))
+
+        projectName.value = ""
+        projectDesc.value = ""
+        projectLink.value = ""
+
+        console.log(project)
+        console.log(projectName.value)
+    } else {
+        alert(`Please upload image for the project ${projectCount}`)
+    }
 }
-
-if (user) {
-    const email = user.email
-    const username = user.displayName
-    const photoURL = user.photoURL
-
-    const [firstName] = username.split(" ")
-
-    console.log(user)
-    console.log(email, username, photoURL)
-
-    const headerNameElem = document.getElementById("header-name")
-    headerNameElem.innerText = firstName
-
-    const displayNameElem = document.getElementById("displayname")
-    displayNameElem.innerText = username
-
-    const emailAddressElem = document.getElementById("email")
-    emailAddressElem.innerText = email
-
-    const displayImgElem = document.getElementById("display-image")
-    displayImgElem.src = photoURL
-}
-
-

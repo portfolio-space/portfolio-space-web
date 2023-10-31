@@ -184,8 +184,7 @@
                 >
             </div>
             <div class="mb-6">
-                <label
-                    class="block mb-2 text-sm font-medium text-gray-900"
+                <label class="block mb-2 text-sm font-medium text-gray-900"
                     >Your skills</label
                 >
                 <div id="skills">
@@ -194,41 +193,61 @@
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
                         required />
                 </div>
-                
-                <button
-                class="bg-black rounded-full w-60 my-3 text-white"
-                id="addskill">
-                Add
-            </button>
-            <div id="projects">
-                <label
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                    >Your Projects</label
-                >
-                <input
-                    type="text"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
-                    required />
-            </div>
-            <!-- <div> -->
+
                 <button
                     class="bg-black rounded-full w-60 my-3 text-white"
-                    id="addproject">
+                    id="addskill">
                     Add
                 </button>
-            <!-- </div> -->
-            <div class="flex items-center h-5 mb-6 mt-3">
-                <input
-                    id="project-thumbnail"
-                    type="file"
-                    class="w-24 h-7 border border-gray-300 rounded bg-gray-50"
-                    accept="Image/*"
-                    required />
-                <label
-                    for="project-thumbnail"
-                    class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
-                    >Project Thumbnail</label
-                >
+                <div id="projects" class="mt-4">
+                    <span class="text-3xl font-bold"
+                        >Project <span id="project-id">1</span></span
+                    >
+                    <div id="project-form" class="flex flex-col gap-2 mt-4">
+                        <label
+                            class="block mb-2 text-sm font-medium text-gray-900"
+                            >Name</label
+                        >
+                        <input
+                            type="text"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                            id="project-name"
+                            required />
+                        <label
+                            class="block mb-2 text-sm font-medium text-gray-900"
+                            >Description</label
+                        >
+                        <input
+                            type="text"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                            id="project-desc"
+                            required />
+                        <label
+                            class="block mb-2 text-sm font-medium text-gray-900"
+                            >Link (Go to project)</label
+                        >
+                        <input
+                            type="text"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                            id="project-link"
+                            required />
+                    </div>
+                    <label
+                        for="project-thumbnail"
+                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                        >Project Thumbnail</label
+                    >
+                    <input
+                        id="project-thumbnail"
+                        type="file"
+                        class="w-24 h-7 border border-gray-300 rounded bg-gray-50"
+                        accept="Image/*" />
+                    <button
+                        class="bg-black rounded-full w-60 my-3 text-white"
+                        id="addproject">
+                        Add
+                    </button>
+                </div>
             </div>
             <button
                 type="submit"
