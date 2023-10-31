@@ -172,36 +172,63 @@
             </div>
             <div class="flex items-center h-5 mb-6">
                 <input
-                    id="image"
+                    id="profile-image"
                     type="file"
                     class="w-24 h-7 border border-gray-300 rounded bg-gray-50"
                     accept="Image/*"
                     required />
                 <label
-                    for="Projects"
+                    for="profile-image"
                     class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
                     >Upload your Image</label
                 >
             </div>
             <div class="mb-6">
                 <label
-                    for="name"
                     class="block mb-2 text-sm font-medium text-gray-900"
                     >Your skills</label
                 >
                 <div id="skills">
                     <input
                         type="text"
-                        id="name"
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
-                        placeholder="John Doe"
                         required />
                 </div>
+                
+                <button
+                class="bg-black rounded-full w-60 my-3 text-white"
+                id="addskill">
+                Add
+            </button>
+            <div id="projects">
+                <label
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Your Projects</label
+                >
+                <input
+                    type="text"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    required />
+            </div>
+            <!-- <div> -->
                 <button
                     class="bg-black rounded-full w-60 my-3 text-white"
-                    id="addskill">
+                    id="addproject">
                     Add
                 </button>
+            <!-- </div> -->
+            <div class="flex items-center h-5 mb-6 mt-3">
+                <input
+                    id="project-thumbnail"
+                    type="file"
+                    class="w-24 h-7 border border-gray-300 rounded bg-gray-50"
+                    accept="Image/*"
+                    required />
+                <label
+                    for="project-thumbnail"
+                    class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                    >Project Thumbnail</label
+                >
             </div>
             <button
                 type="submit"

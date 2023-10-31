@@ -15,7 +15,7 @@
                 <img
                     src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a01c85c65d53_Mail%20Icon.svg"
                     alt="" />
-                <a href="mailto:" id="email">contact@developer.com</a>
+                <a href="mailto:" id="email"></a>
             </div>
             <div class="flex gap-4 items-center">
                 <a href="#projects" class="px-6 py-2 hover:text-slate-500"
@@ -25,9 +25,9 @@
                 <a href="" class="px-6 py-2 hover:text-slate-500">Contact</a>
             </div>
         </nav>
-        <div class="flex flex-col items-center my-24 gap-3">
-            <img id="image" class="rounded-full w-36 h-36" src="" alt="" />
-            <p class="text-2xl py-2 text-slate-800 mt-2">
+        <div id="profile-image" class="flex flex-col items-center my-24 gap-3">
+            <!-- <img id="image" class="rounded-full w-36 h-36" src="" alt="" /> -->
+            <p id="profile-name" class="text-2xl py-2 text-slate-800 mt-2">
                 Hi, I'm <span id="name">Developer</span> 🤘
             </p>
             <p
@@ -191,6 +191,22 @@
         </style>
 
         <script>
+            function readImage() {
+            const encodedImage = localStorage.getItem("encodedImage")
+
+            if (encodedImage) {
+                // Create a new image element and set the src to the encoded image.
+                const image = new Image()
+                image.src = encodedImage
+                image.classList.add("rounded-full", "w-36", "h-36")
+                const profileImage = document.getElementById("profile-image")
+                // Append the image element to the body.
+                profileImage.insertBefore(image,profileImage.firstChild)
+            }
+        }
+
+            readImage()
+
             const urlParams = new URLSearchParams(window.location.search)
             const receivedData = urlParams.get("data")
 
@@ -200,12 +216,9 @@
 
             // Access and display object properties
             document.getElementById("name").textContent = decodedData.name
-            document.getElementById("profession").textContent =
-                decodedData.profession
-            document.getElementById("email1").textContent = decodedData.email
-            document.getElementById("email2").textContent = decodedData.email
-            document.getElementById("description").textContent =
-                decodedData.description
+            document.getElementById("profession").textContent = decodedData.profession
+            document.getElementById("email").textContent = decodedData.email
+            document.getElementById("description").textContent = decodedData.description
 
             document.currentScript.remove()
         </script>

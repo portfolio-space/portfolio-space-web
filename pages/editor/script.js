@@ -4,14 +4,23 @@ let profession = document.getElementById("profession")
 let description = document.getElementById("description")
 let submitBtn = document.getElementById("submit")
 let addSkill = document.getElementById("addskill")
+let addProject = document.getElementById("addproject")
+let projects = document.getElementById("projects")
 let skills = document.getElementById("skills")
-
-let file
 
 addSkill.addEventListener("click", addSkills)
 
 function addSkills() {
-    skills.innerHTML += `<input type="text" id="name" class="my-3 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5" placeholder="John Doe" required>`
+    skills.innerHTML += `<input type="text" class="my-3 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"required>`
+}
+
+addProject.addEventListener("click", addProjects)
+
+function addProjects () {
+    projects.innerHTML += `<input
+    type="text"
+    class="my-3 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+    required />`
 }
 
 submitBtn.addEventListener("click", function (event) {
@@ -25,13 +34,14 @@ function send() {
         email: email.value,
         profession: profession.value,
         description: description.value,
+        projects: []
     }
     const encodedData = JSON.stringify(data)
 
     window.location.href = "/templates/design-1/index.html?data=" + encodedData
 }
 
-const fileInput = document.getElementById("image")
+const fileInput = document.getElementById("profile-image")
 
 fileInput.addEventListener("change", function (event) {
     const file = event.target.files[0]
@@ -47,25 +57,12 @@ fileInput.addEventListener("change", function (event) {
             localStorage.setItem("encodedImage", encodedImage)
 
             console.log("Image saved")
-            readImage()
         }
 
         reader.readAsDataURL(file)
     }
 })
 
-function readImage() {
-    const encodedImage = localStorage.getItem("encodedImage")
-
-    if (encodedImage) {
-        // Create a new image element and set the src to the encoded image.
-        const image = new Image()
-        image.src = encodedImage
-
-        // Append the image element to the body.
-        document.body.appendChild(image)
-    }
-}
 
 const user = JSON.parse(localStorage.getItem("user"))
 
@@ -96,3 +93,5 @@ if (user) {
     const displayImgElem = document.getElementById("display-image")
     displayImgElem.src = photoURL
 }
+
+
