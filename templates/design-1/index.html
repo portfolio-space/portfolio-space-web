@@ -15,7 +15,7 @@
                 <img
                     src="https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a01c85c65d53_Mail%20Icon.svg"
                     alt="" />
-                <a href="mailto:" id="email"></a>
+                <a href="" id="email"></a>
             </div>
             <div class="flex gap-4 items-center">
                 <a href="#projects" class="px-6 py-2 hover:text-slate-500"
@@ -26,16 +26,18 @@
             </div>
         </nav>
         <div id="profile-image" class="flex flex-col items-center my-24 gap-3">
-            <!-- <img id="image" class="rounded-full w-36 h-36" src="" alt="" /> -->
             <p id="profile-name" class="text-2xl py-2 text-slate-800 mt-2">
                 Hi, I'm <span id="name">Developer</span> 🤘
             </p>
             <p
-                id="tagline"
-                class="text-center font-bold text-6xl pb-5 tracking-tight">
-                Building digital <br />
-                products, brands, and <br />
+                id="description"
+                class="text-center font-bold text-6xl pb-5 tracking-tight w-1/3">
+                Building digital
+                products, brands, and 
                 experience.
+            </p>
+            <p class="text-center text-2xl pb-5 tracking-tight font-light">
+                a <span id="profession" class="font-bold">Product Designer</span>.
             </p>
             <a
                 href="#contact"
@@ -45,49 +47,19 @@
         </div>
         <hr />
 
-        <div class="px-10 py-10 border-b" id="projects">
+        <div id="project" class="px-10 py-10 border-b">
             <h1 class="font-bold text-4xl">Projects</h1>
-            <div class="grid grid-cols-3 gap-10 py-10 px-5 items-center">
-                <div
-                    class="border rounded-md p-4 flex flex-col shadow-md h-fit">
-                    <img
-                        src="https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_FMjpg_UX1000_.jpg"
-                        alt="project"
-                        class="border rounded-md" />
-                    <span class="text-xl mt-5">Ipsum is simply dummy</span>
-                    <span class="text-sm text-gray-700 mt-2"
-                        >Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem ipsum dolor sit amet.</span
-                    >
-                    <button
-                        class="bg-black text-white px-4 py-2 rounded-full mt-4">
-                        Go to project
-                    </button>
-                </div>
+            <div id="project-details" class="grid grid-cols-3 gap-10 py-10 px-5 items-center">
+                
             </div>
         </div>
 
-        <div class="flex flex-col p-20 border-b">
+        <div id="service" class="flex flex-col p-20 border-b">
             <div
                 class="flex flex-col w-full py-16 bg-[url('https://assets.website-files.com/5f99409a4f44a04dedc65d19/5f99409a4f44a002c8c65d95_Shapes.svg')] bg-slate-200">
                 <h1 class="font-bold text-4xl text-center pb-10">Services</h1>
-                <div class="flex gap-8 px-14">
-                    <div
-                        class="shadow-lg bg-white py-14 px-6 rounded-md text-center">
-                        <h1 class="text-center text-xl pb-2">Strategy</h1>
-                        <span class="text-gray-600"
-                            >Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Nesciunt quos voluptas assumenda.</span
-                        >
-                    </div>
-                    <div
-                        class="shadow-lg bg-white py-14 px-6 rounded-md text-center">
-                        <h1 class="text-center text-xl pb-2">Strategy</h1>
-                        <span class="text-gray-600"
-                            >Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Nesciunt quos voluptas assumenda.</span
-                        >
-                    </div>
+                <div id="service-details" class="flex gap-8 px-14">
+
                 </div>
             </div>
         </div>
@@ -98,12 +70,12 @@
             <span class="font-bold text-5xl text-left w-1/2 m-auto"
                 >Contact me</span
             >
-            <span class="text-3xl text-left w-1/2 m-auto"
+            <span id="contact-desc" class="text-3xl text-left w-1/2 m-auto"
                 >Let me know if you want to talk about a potential
                 collaboration. I’m available for freelance work.
             </span>
-            <a
-                href="mailto:"
+            <a id="email"
+                href=""
                 class="text-3xl text-left w-1/2 m-auto text-blue-700 underline"
                 >contact@developer.com</a
             >
@@ -120,7 +92,7 @@
                         <h1 class="font-bold text-2xl">Portfolio Space</h1>
                     </div>
 
-                    <p
+                    <p  id="description"
                         class="mt-4 text-gray-500 lg:text-left lg:text-lg font-medium">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Amet veniam ad.
@@ -136,14 +108,14 @@
                             <li>
                                 <a
                                     class="text-gray-600 transition hover:text-gray-700/75"
-                                    href="/">
+                                    href="#service">
                                     Services
                                 </a>
                             </li>
                             <li>
                                 <a
                                     class="text-gray-600 transition hover:text-gray-700/75"
-                                    href="/">
+                                    href="#contact">
                                     Contact
                                 </a>
                             </li>
@@ -165,9 +137,9 @@
                             </li>
 
                             <li>
-                                <a
+                                <a id="email"
                                     class="text-gray-600 transition hover:text-gray-700/75"
-                                    href="/">
+                                    href="">
                                     Email
                                 </a>
                             </li>
@@ -208,17 +180,40 @@
 
             function updateProjects() {
                 const projects = JSON.parse(localStorage.getItem("projects"))
-
+                const projectDetails = document.getElementById("project-details")
                 projects.forEach((project) => {
                     console.log(project)
+                    projectDetails.innerHTML += `<div
+                    class="border rounded-md p-4 flex flex-col shadow-md h-fit">
+                    <img
+                        src=${project[3]}
+                        alt="project"
+                        class="border rounded-md" />
+                    <span class="text-xl mt-5">${project[0]}</span>
+                    <span class="text-sm text-gray-700 mt-2">${project[1]}</span>
+                    <button
+                        class="bg-black text-white px-4 py-2 rounded-full mt-4">
+                        <a href=${project[2]} target="_blank">
+                            Go to project
+                        </a>
+                    </button>
+                    </div>`
                 })
+
             }
 
             function updateServices() {
                 const services = JSON.parse(localStorage.getItem("services"))
+                const serviceDetails = document.getElementById("service-details")
 
                 services.forEach((service) => {
-                    console.log(service)
+                    // console.log(service)
+                    serviceDetails.innerHTML += `<div
+                        class="shadow-lg bg-white py-14 px-6 rounded-md text-center">
+                        <h1 class="text-center text-xl pb-2">${service[0]}</h1>
+                        <span class="text-gray-600">${service[1]}</span>
+                    </div>`
+
                 })
             }
 
@@ -231,11 +226,17 @@
             const decodedData = JSON.parse(receivedData)
 
             document.getElementById("name").textContent = decodedData.name
-            document.getElementById("profession").textContent =
-                decodedData.profession
-            document.getElementById("email").textContent = decodedData.email
-            document.getElementById("description").textContent =
-                decodedData.description
+            document.getElementById("profession").textContent = decodedData.profession
+            document.querySelectorAll("#email").forEach((email) => {
+                email.textContent = decodedData.email  
+                email.href = `mailto:${decodedData.email}`
+            })
+            
+            document.querySelectorAll("#description").forEach((description) =>{
+                description.textContent = decodedData.description
+            })
+
+            document.getElementById("contact-desc").textContent = decodedData.contactDesc
 
             document.currentScript.remove()
         </script>

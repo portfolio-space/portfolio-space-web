@@ -1,6 +1,6 @@
 // input field for user portfolio
 let names = document.getElementById("name")
-let email = document.getElementById("email")
+let inputEmail = document.getElementById("input-email")
 let profession = document.getElementById("profession")
 let description = document.getElementById("description")
 let contactDesc = document.getElementById("contact-desc")
@@ -39,23 +39,26 @@ profileImgUpload.addEventListener("change", (event) => {
     }
 })
 
+console.log(inputEmail)
+
 function createPortfolio() {
     let data = {
         name: names.value,
-        email: email.value,
+        email: inputEmail.value,
         profession: profession.value,
         description: description.value,
         contactDesc: contactDesc.value,
-        projects: [],
+        projects: []
     }
+
+    console.log(data.projects)
 
     const encodedURLData = JSON.stringify(data)
 
     localStorage.setItem(`projects`, JSON.stringify(projects))
     localStorage.setItem(`services`, JSON.stringify(services))
 
-    window.location.href =
-        "/templates/design-1/index.html?data=" + encodedURLData
+    window.location.href = "/templates/design-1/index.html?data=" + encodedURLData
 }
 
 const projects = []
