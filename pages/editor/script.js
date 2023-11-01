@@ -39,8 +39,6 @@ profileImgUpload.addEventListener("change", (event) => {
     }
 })
 
-console.log(inputEmail)
-
 function createPortfolio() {
     let data = {
         name: names.value,
@@ -48,7 +46,6 @@ function createPortfolio() {
         profession: profession.value,
         description: description.value,
         contactDesc: contactDesc.value,
-        projects: []
     }
 
     console.log(data.projects)
@@ -57,8 +54,12 @@ function createPortfolio() {
 
     localStorage.setItem(`projects`, JSON.stringify(projects))
     localStorage.setItem(`services`, JSON.stringify(services))
+    localStorage.setItem(
+        "portfolio",
+        `/templates/design-1/index.html?data=${encodedURLData}`,
+    )
 
-    window.location.href = "/templates/design-1/index.html?data=" + encodedURLData
+    window.location.href = "/pages/preview/index.html"
 }
 
 const projects = []
