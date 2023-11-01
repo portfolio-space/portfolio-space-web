@@ -192,7 +192,7 @@
 
         <script>
             function updateProfileImg() {
-                const encodedImage = localStorage.getItem("encodedImage")
+                const encodedImage = localStorage.getItem("encodedProfileImage")
 
                 if (encodedImage) {
                     const dp_image = new Image()
@@ -207,31 +207,29 @@
             updateProfileImg()
 
             function updateProjects() {
-                const projectIds = JSON.parse(
-                    localStorage.getItem("projectIds"),
-                )
+                const projects = JSON.parse(localStorage.getItem("projects"))
 
-                for (const projectId of projectIds) {
-                    const projectDetails = JSON.parse(
-                        localStorage.getItem(projectId),
-                    )
+                projects.forEach((project) => {
+                    console.log(project)
+                })
+            }
 
-                    const projectElement = document.getElementById(projectId)
+            function updateServices() {
+                const services = JSON.parse(localStorage.getItem("services"))
 
-                    projectElement.innerHTML = `<h2>${projectDetails.name}</h2><p>${projectDetails.description}</p>`
-                }
+                services.forEach((service) => {
+                    console.log(service)
+                })
             }
 
             updateProjects()
+            updateServices()
 
             const urlParams = new URLSearchParams(window.location.search)
             const receivedData = urlParams.get("data")
 
-            // Decode the data and parse it back into an object
             const decodedData = JSON.parse(receivedData)
-            console.log(decodedData)
 
-            // Access and display object properties
             document.getElementById("name").textContent = decodedData.name
             document.getElementById("profession").textContent =
                 decodedData.profession

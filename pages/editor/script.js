@@ -1,44 +1,37 @@
+// input field for user portfolio
 let names = document.getElementById("name")
 let email = document.getElementById("email")
 let profession = document.getElementById("profession")
 let description = document.getElementById("description")
-let submitBtn = document.getElementById("submit")
-let addSkill = document.getElementById("addskill")
+let contactDesc = document.getElementById("contact-desc")
+
+// file upload elements
+const profileImgUpload = document.getElementById("profile-image")
+const projectThumbnail = document.getElementById("project-thumbnail")
+
+// user action
 let addProject = document.getElementById("addproject")
-let projects = document.getElementById("projects")
-let skills = document.getElementById("skills")
+let addService = document.getElementById("addservice")
 
+let submitBtn = document.getElementById("submit")
+
+// event handlers
 addProject.addEventListener("click", addProjects)
+addService.addEventListener("click", addServices)
 
-submitBtn.addEventListener("click", function (event) {
+submitBtn.addEventListener("click", (event) => {
     event.preventDefault()
-    send()
+    createPortfolio()
 })
 
-function send() {
-    let data = {
-        name: names.value,
-        email: email.value,
-        profession: profession.value,
-        description: description.value,
-        projects: [],
-    }
-    const encodedData = JSON.stringify(data)
-
-    window.location.href = "/templates/design-1/index.html?data=" + encodedData
-}
-
-const profileImgUpload = document.getElementById("profile-image")
-
-profileImgUpload.addEventListener("change", function (event) {
+profileImgUpload.addEventListener("change", (event) => {
     const file = event.target.files[0]
 
     if (file) {
         const reader = new FileReader()
 
-        reader.onload = function (e) {
-            const encodedImage = e.target.result
-            localStorage.setItem("encodedImage", encodedImage)
+        reader.onload = (e) => {
+            localStorage.setItem("encodedProfileImage", e.target.result)
             console.log("Profile Image saved")
         }
 
@@ -46,14 +39,31 @@ profileImgUpload.addEventListener("change", function (event) {
     }
 })
 
+function createPortfolio() {
+    let data = {
+        name: names.value,
+        email: email.value,
+        profession: profession.value,
+        description: description.value,
+        contactDesc: contactDesc.value,
+        projects: [],
+    }
+
+    const encodedURLData = JSON.stringify(data)
+
+    localStorage.setItem(`projects`, JSON.stringify(projects))
+    localStorage.setItem(`services`, JSON.stringify(services))
+
+    window.location.href =
+        "/templates/design-1/index.html?data=" + encodedURLData
+}
+
+const projects = []
 let projectCount = 1
 
-const project = []
 let encodeThumbnailImage
 
-const projectThumbnail = document.getElementById("project-thumbnail")
-
-projectThumbnail.addEventListener("change", function (event) {
+projectThumbnail.addEventListener("change", (event) => {
     const file = event.target.files[0]
 
     if (file) {
@@ -61,54 +71,69 @@ projectThumbnail.addEventListener("change", function (event) {
 
         reader.readAsDataURL(file)
 
-        reader.onload = function (e) {
-            encodeThumbnailImage = e.target.result
-        }
+        reader.onload = (e) => (encodeThumbnailImage = e.target.result)
     }
 })
 
 function addProjects() {
-    // Get the project details from the input fields.
-    let projectName = document.getElementById("project-name")
-    let projectDesc = document.getElementById("project-desc")
-    let projectLink = document.getElementById("project-link")
-    let projectIdElem = document.getElementById("project-id")
+    const projectName = document.getElementById("project-name")
+    const projectDesc = document.getElementById("project-desc")
+    const projectLink = document.getElementById("project-link")
+    const projectIdElem = document.getElementById("project-id")
 
-    // Validate the input fields.
-    if (!projectName.value) {
-        alert("Please enter a project name.")
+    if (
+        !validateInput(projectName, "Please enter a project name.") ||
+        !validateInput(projectDesc, "Please enter a project description.") ||
+        !validateInput(projectLink, "Please enter a project link.")
+    ) {
         return
     }
 
-    if (!projectDesc.value) {
-        alert("Please enter a project description.")
-        return
-    }
-
-    if (!projectLink.value) {
-        alert("Please enter a project link.")
-        return
-    }
-
-    if (projectThumbnail.files.length != 0) {
-        project.push([
+    if (projectThumbnail.files.length !== 0) {
+        projects.push([
             projectName.value,
             projectDesc.value,
             projectLink.value,
             encodeThumbnailImage,
         ])
-        projectCount += 1
-        projectIdElem.innerText = projectCount
 
-        localStorage.setItem(`project-${projectCount}`, JSON.stringify(project))
+        projectIdElem.innerText = ++projectCount
 
         projectName.value = ""
         projectDesc.value = ""
         projectLink.value = ""
-
-        console.log(project)
-        console.log(projectName.value)
+        projectThumbnail.value = ""
     } else {
-        alert(`Please upload image for the project ${projectCount}`)
+        alert(`Please upload an image for project ${projectCount}`)
     }
+}
+
+let services = []
+let servicesCount = 1
+
+function addServices() {
+    const serviceName = document.getElementById("service-name")
+    const serviceDesc = document.getElementById("service-desc")
+    const serviceIdElem = document.getElementById("service-id")
+
+    if (
+        !validateInput(serviceName, "Please enter a service name.") ||
+        !validateInput(serviceDesc, "Please enter a service description.")
+    ) {
+        return
+    }
+
+    services.push([serviceName.value, serviceDesc.value])
+    serviceIdElem.innerText = ++servicesCount
+
+    serviceName.value = ""
+    serviceDesc.value = ""
+}
+
+function validateInput(element, message) {
+    if (!element.value) {
+        alert(message)
+        return false
+    }
+    return true
 }

@@ -58,7 +58,8 @@
             </h1>
         </div>
 
-        <form class="flex flex-col items-center mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+        <form
+            class="flex flex-col items-center mx-auto max-w-screen-xl px-4 py-14 sm:px-6 lg:px-8">
             <div class="mb-6 w-1/2">
                 <label
                     for="name"
@@ -98,8 +99,7 @@
                     placeholder="Fullstack Developer"
                     required />
             </div>
-            </div>
-            <div class="mb-6 w-1/2">
+            <div class="mb-5 w-1/2">
                 <label
                     for="description"
                     class="block mb-2 text-sm font-medium text-gray-900"
@@ -108,25 +108,42 @@
                 <textarea
                     name="description"
                     id="description"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required>
-                </textarea>
+                    class="resize shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    required></textarea>
             </div>
-            <div class="flex items-center h-5 mb-6 w-1/2">
-                <input
-                    id="profile-image"
-                    type="file"
-                    class="w-24 h-7 border border-gray-300 rounded bg-gray-50"
-                    accept="Image/*"
-                    required />
+            <div class="mb-5 w-1/2">
+                <label
+                    for="contact-desc"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Contact section description</label
+                >
+                <textarea
+                    name="contact-desc"
+                    id="contact-desc"
+                    class="resize shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    required></textarea>
+            </div>
+            <div class="flex items-center w-1/2 gap-4">
                 <label
                     for="profile-image"
-                    class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
+                    class="mb-2 text-base font-medium text-gray-900 my-2"
                     >Upload your Image</label
                 >
+                <div class="block border p-2 rounded-lg">
+                    <span class="sr-only">Choose profile photo</span>
+                    <input
+                        id="profile-image"
+                        type="file"
+                        accept="Image/*"
+                        class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-violet-200 file:text-violet-700 hover:file:bg-violet-100 hover:cursor-pointer"
+                        required />
+                </div>
             </div>
+
+            <span class="border opacity-60 w-full my-10"></span>
+
             <div class="mb-6 w-1/2">
-                <div id="projects" class="mt-4">
+                <div id="project" class="mt-4">
                     <span class="text-3xl font-bold"
                         >Project <span id="project-id">1</span></span
                     >
@@ -159,29 +176,39 @@
                             id="project-link"
                             required />
                     </div>
-                    <input
-                    id="project-thumbnail"
-                    type="file"
-                    class="my-4 w-24 h-7 border border-gray-300 rounded bg-gray-50"
-                    accept="Image/*" />
-                    <label
-                        for="project-thumbnail"
-                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
-                        >Project Thumbnail</label
-                    >
-                        <div>
-                            <button
-                                class="bg-black rounded-full w-60 my-3 text-white"
-                                id="addproject">
-                                Add
-                            </button>
+                    <div class="flex items-center pt-6 pb-4 gap-4">
+                        <label
+                            for="project-thumbnail"
+                            class="mb-2 text-base font-medium text-gray-900 my-2"
+                            >Project Thumbnail</label
+                        >
+                        <div class="block border p-2 rounded-lg">
+                            <span class="sr-only"
+                                >Choose project thumbnail</span
+                            >
+                            <input
+                                id="project-thumbnail"
+                                type="file"
+                                accept="Image/*"
+                                class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-violet-200 file:text-violet-700 hover:file:bg-violet-100 hover:cursor-pointer"
+                                required />
                         </div>
+                    </div>
+
+                    <button
+                        class="bg-black text-white px-6 py-2 rounded-lg"
+                        id="addproject">
+                        Add Project
+                    </button>
                 </div>
             </div>
+
+            <span class="border opacity-60 w-full my-10"></span>
+
             <div class="mb-6 w-1/2">
-                <div id="projects" class="mt-4">
+                <div id="service" class="mt-4">
                     <span class="text-3xl font-bold"
-                        >Services <span id="project-id">1</span></span
+                        >Services <span id="service-id">1</span></span
                     >
                     <div id="service-form" class="flex flex-col gap-2 mt-4">
                         <label
@@ -202,27 +229,25 @@
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             id="service-desc"
                             required />
-                        
                     </div>
-                   
-                        <div>
-                            <button
-                                class="bg-black rounded-full w-60 my-3 text-white"
-                                id="addservice">
-                                Add
-                            </button>
-                        </div>
+                    <div>
+                        <button
+                            class="bg-black text-white px-6 py-2 rounded-lg mt-4"
+                            id="addservice">
+                            Add Service
+                        </button>
+                    </div>
                 </div>
             </div>
             <button
                 type="submit"
                 id="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-1/2">
                 Create Portfolio
             </button>
         </form>
     </body>
 
     <script type="module" src="/public/helpers/header.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </html>

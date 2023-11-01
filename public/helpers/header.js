@@ -12,9 +12,6 @@ if (user) {
 
     const [firstName] = username.split(" ")
 
-    console.log(user)
-    console.log(email, username, photoURL)
-
     const headerNameElem = document.getElementById("header-name")
     headerNameElem.innerText = firstName
 
@@ -37,7 +34,7 @@ function signOutFromGoogle() {
     const auth = getAuth()
 
     auth.signOut().then(() => {
-        console.log("signed out")
+        console.log("Signed out")
         localStorage.clear()
         window.location.href = "/index.html"
     })
