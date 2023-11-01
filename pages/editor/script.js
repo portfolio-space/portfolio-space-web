@@ -4,6 +4,7 @@ let inputEmail = document.getElementById("input-email")
 let profession = document.getElementById("profession")
 let description = document.getElementById("description")
 let contactDesc = document.getElementById("contact-desc")
+let instagramLink = document.getElementById("instgram-link")
 
 // file upload elements
 const profileImgUpload = document.getElementById("profile-image")
@@ -48,6 +49,7 @@ function createPortfolio() {
         profession: profession.value,
         description: description.value,
         contactDesc: contactDesc.value,
+        instagramLink: instagramLink.value, 
         projects: []
     }
 

@@ -75,7 +75,7 @@
             </div>
             <div class="mb-6 w-1/2">
                 <label
-                    for="email"
+                    for="input-email"
                     class="block mb-2 text-sm font-medium text-gray-900"
                     >Your email</label
                 >
@@ -143,6 +143,23 @@
             <span class="border opacity-60 w-full my-10"></span>
 
             <div class="mb-6 w-1/2">
+                <span class="text-3xl font-bold">Social Media</span>
+                <label
+                    for="instagram-link"
+                    class="block my-2 text-sm font-medium text-gray-900"
+                    >Instagram Link</label
+                >
+                <input
+                    type="text"
+                    id="instagram-link"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="John Doe"
+                    required />
+            </div>
+
+            <span class="border opacity-60 w-full my-10"></span>
+
+            <div class="mb-6 w-1/2">
                 <div id="project" class="mt-4">
                     <span class="text-3xl font-bold"
                         >Project <span id="project-id">1</span></span
@@ -158,14 +175,15 @@
                             id="project-name"
                             required />
                         <label
+                            for="project-desc"
                             class="block mb-2 text-sm font-medium text-gray-900"
                             >Description</label
                         >
-                        <input
-                            type="text"
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                            id="project-desc"
-                            required />
+                        <textarea
+                        name="project-desc"
+                        id="project-desc"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required></textarea>
                         <label
                             class="block mb-2 text-sm font-medium text-gray-900"
                             >Link (Go to project)</label
@@ -221,14 +239,15 @@
                             id="service-name"
                             required />
                         <label
+                            for="service-desc"
                             class="block mb-2 text-sm font-medium text-gray-900"
                             >Description</label
                         >
-                        <input
-                            type="text"
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                            id="service-desc"
-                            required />
+                        <textarea
+                        name="service-desc"
+                        id="service-desc"
+                        class="resize shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required></textarea>
                     </div>
                     <div>
                         <button
@@ -239,6 +258,7 @@
                     </div>
                 </div>
             </div>
+            
             <button
                 type="submit"
                 id="submit"
