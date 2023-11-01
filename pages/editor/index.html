@@ -58,8 +58,8 @@
             </h1>
         </div>
 
-        <form class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-            <div class="mb-6">
+        <form class="flex flex-col items-center mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+            <div class="mb-6 w-1/2">
                 <label
                     for="name"
                     class="block mb-2 text-sm font-medium text-gray-900"
@@ -68,11 +68,11 @@
                 <input
                     type="text"
                     id="name"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     placeholder="John Doe"
                     required />
             </div>
-            <div class="mb-6">
+            <div class="mb-6 w-1/2">
                 <label
                     for="email"
                     class="block mb-2 text-sm font-medium text-gray-900"
@@ -81,11 +81,11 @@
                 <input
                     type="email"
                     id="email"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     placeholder="name@gmail.com"
                     required />
             </div>
-            <div class="mb-6">
+            <div class="mb-6 w-1/2">
                 <label
                     for="profession"
                     class="block mb-2 text-sm font-medium text-gray-900"
@@ -94,70 +94,12 @@
                 <input
                     type="text"
                     id="profession"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     placeholder="Fullstack Developer"
                     required />
             </div>
-            <h1 class="font-medium my-4">Navbar Options</h1>
-            <div class="flex flex-col items-start mb-6">
-                <div class="flex items-center h-5">
-                    <input
-                        id="Work"
-                        type="checkbox"
-                        value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-                        value="Home"
-                        required />
-                    <label
-                        for="Work"
-                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
-                        >Work</label
-                    >
-                </div>
-                <div class="flex items-center h-5">
-                    <input
-                        id="About"
-                        type="checkbox"
-                        value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-                        value="Home"
-                        required />
-                    <label
-                        for="About"
-                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
-                        >About</label
-                    >
-                </div>
-                <div class="flex items-center h-5">
-                    <input
-                        id="Contact"
-                        type="checkbox"
-                        value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-                        value="Contact"
-                        required />
-                    <label
-                        for="Contact"
-                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
-                        >Contact</label
-                    >
-                </div>
-                <div class="flex items-center h-5">
-                    <input
-                        id="Projects"
-                        type="checkbox"
-                        value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-                        value="Projects"
-                        required />
-                    <label
-                        for="Projects"
-                        class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
-                        >Projects</label
-                    >
-                </div>
             </div>
-            <div class="mb-6">
+            <div class="mb-6 w-1/2">
                 <label
                     for="description"
                     class="block mb-2 text-sm font-medium text-gray-900"
@@ -166,11 +108,11 @@
                 <textarea
                     name="description"
                     id="description"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     required>
                 </textarea>
             </div>
-            <div class="flex items-center h-5 mb-6">
+            <div class="flex items-center h-5 mb-6 w-1/2">
                 <input
                     id="profile-image"
                     type="file"
@@ -183,22 +125,7 @@
                     >Upload your Image</label
                 >
             </div>
-            <div class="mb-6">
-                <label class="block mb-2 text-sm font-medium text-gray-900"
-                    >Your skills</label
-                >
-                <div id="skills">
-                    <input
-                        type="text"
-                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
-                        required />
-                </div>
-
-                <button
-                    class="bg-black rounded-full w-60 my-3 text-white"
-                    id="addskill">
-                    Add
-                </button>
+            <div class="mb-6 w-1/2">
                 <div id="projects" class="mt-4">
                     <span class="text-3xl font-bold"
                         >Project <span id="project-id">1</span></span
@@ -210,7 +137,7 @@
                         >
                         <input
                             type="text"
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             id="project-name"
                             required />
                         <label
@@ -219,7 +146,7 @@
                         >
                         <input
                             type="text"
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             id="project-desc"
                             required />
                         <label
@@ -228,32 +155,70 @@
                         >
                         <input
                             type="text"
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             id="project-link"
                             required />
                     </div>
+                    <input
+                    id="project-thumbnail"
+                    type="file"
+                    class="my-4 w-24 h-7 border border-gray-300 rounded bg-gray-50"
+                    accept="Image/*" />
                     <label
                         for="project-thumbnail"
                         class="mb-2 text-sm font-medium text-gray-900 px-2 my-2"
                         >Project Thumbnail</label
                     >
-                    <input
-                        id="project-thumbnail"
-                        type="file"
-                        class="w-24 h-7 border border-gray-300 rounded bg-gray-50"
-                        accept="Image/*" />
-                    <button
-                        class="bg-black rounded-full w-60 my-3 text-white"
-                        id="addproject">
-                        Add
-                    </button>
+                        <div>
+                            <button
+                                class="bg-black rounded-full w-60 my-3 text-white"
+                                id="addproject">
+                                Add
+                            </button>
+                        </div>
+                </div>
+            </div>
+            <div class="mb-6 w-1/2">
+                <div id="projects" class="mt-4">
+                    <span class="text-3xl font-bold"
+                        >Services <span id="project-id">1</span></span
+                    >
+                    <div id="service-form" class="flex flex-col gap-2 mt-4">
+                        <label
+                            class="block mb-2 text-sm font-medium text-gray-900"
+                            >Name</label
+                        >
+                        <input
+                            type="text"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            id="service-name"
+                            required />
+                        <label
+                            class="block mb-2 text-sm font-medium text-gray-900"
+                            >Description</label
+                        >
+                        <input
+                            type="text"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            id="service-desc"
+                            required />
+                        
+                    </div>
+                   
+                        <div>
+                            <button
+                                class="bg-black rounded-full w-60 my-3 text-white"
+                                id="addservice">
+                                Add
+                            </button>
+                        </div>
                 </div>
             </div>
             <button
                 type="submit"
                 id="submit"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Register new account
+                Create Portfolio
             </button>
         </form>
     </body>

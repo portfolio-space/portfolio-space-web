@@ -8,12 +8,6 @@ let addProject = document.getElementById("addproject")
 let projects = document.getElementById("projects")
 let skills = document.getElementById("skills")
 
-addSkill.addEventListener("click", addSkills)
-
-function addSkills() {
-    skills.innerHTML += `<input type="text" class="my-3 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"required>`
-}
-
 addProject.addEventListener("click", addProjects)
 
 submitBtn.addEventListener("click", function (event) {
