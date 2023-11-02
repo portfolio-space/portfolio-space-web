@@ -47,7 +47,7 @@ function createPortfolio() {
         profession: profession.value,
         description: description.value,
         contactDesc: contactDesc.value,
-        instagramLink: instagramLink.value, 
+        instagramLink: instagramLink.value,
     }
 
     console.log(data.projects)

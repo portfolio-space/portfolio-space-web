@@ -18,7 +18,10 @@
                 <a href="" target="_blank" id="email"></a>
             </div>
             <div class="flex gap-4 items-center">
-                <a href="#projects" target="_blank" class="px-6 py-2 hover:text-slate-500"
+                <a
+                    href="#projects"
+                    target="_blank"
+                    class="px-6 py-2 hover:text-slate-500"
                     >Projects</a
                 >
                 <a href="" class="px-6 py-2 hover:text-slate-500">Services</a>
@@ -107,15 +110,15 @@
                         <ul class="mt-6 space-y-1">
                             <li>
                                 <a
-                                href="#service"
-                                class="text-gray-600 transition hover:text-gray-700/75">
+                                    href="#service"
+                                    class="text-gray-600 transition hover:text-gray-700/75">
                                     Services
                                 </a>
                             </li>
                             <li>
                                 <a
-                                href="#contact"
-                                class="text-gray-600 transition hover:text-gray-700/75">
+                                    href="#contact"
+                                    class="text-gray-600 transition hover:text-gray-700/75">
                                     Contact
                                 </a>
                             </li>
@@ -130,19 +133,20 @@
                         <ul class="mt-6 space-y-1">
                             <li>
                                 <a
-                                id="instagramLink"
-                                href=""
-                                target="_blank"
-                                class="text-gray-600 transition hover:text-gray-700/75">
+                                    id="instagramLink"
+                                    href=""
+                                    target="_blank"
+                                    class="text-gray-600 transition hover:text-gray-700/75">
                                     Instagram
                                 </a>
                             </li>
 
                             <li>
-                                <a id="email"
-                                href=""
-                                target="_blank"
-                                class="text-gray-600 transition hover:text-gray-700/75">
+                                <a
+                                    id="email"
+                                    href=""
+                                    target="_blank"
+                                    class="text-gray-600 transition hover:text-gray-700/75">
                                     Email
                                 </a>
                             </li>
@@ -240,8 +244,10 @@
                 description.textContent = decodedData.description
             })
 
-            document.getElementById("contact-desc").textContent = decodedData.contactDesc
-            document.getElementById("instagramLink").href = decodedData.instagramLink
+            document.getElementById("contact-desc").textContent =
+                decodedData.contactDesc
+            document.getElementById("instagramLink").href =
+                decodedData.instagramLink
 
             document.currentScript.remove()
         </script>
