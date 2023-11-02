@@ -4,7 +4,7 @@ let inputEmail = document.getElementById("input-email")
 let profession = document.getElementById("profession")
 let description = document.getElementById("description")
 let contactDesc = document.getElementById("contact-desc")
-let instagramLink = document.getElementById("instgram-link")
+let instagramLink = document.getElementById("instagram-link")
 
 // file upload elements
 const profileImgUpload = document.getElementById("profile-image")
@@ -58,10 +58,10 @@ function createPortfolio() {
     localStorage.setItem(`services`, JSON.stringify(services))
     localStorage.setItem(
         "portfolio",
-        `/templates/design-1/index.html?data=${encodedURLData}`,
+        `../../templates/design-1/index.html?data=${encodedURLData}`,
     )
 
-    window.location.href = "/pages/preview/index.html"
+    window.location.href = "../../pages/preview/index.html"
 }
 
 const projects = []
