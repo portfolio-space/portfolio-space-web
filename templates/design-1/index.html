@@ -88,15 +88,12 @@
             <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <div class="mx-auto max-w-sm lg:ml-0">
                     <div class="flex gap-4">
-                        <span class="sr-only" id="footer-title"
-                            >Portfolio Space</span
-                        >
-                        <h1 class="font-bold text-2xl">Portfolio Space</h1>
+                        <h1 class="font-bold text-2xl" id="footer-title"></h1>
                     </div>
 
                     <p
                         id="description"
-                        class="mt-4 text-gray-500 lg:text-left lg:text-lg font-medium">
+                        class="mt-4 text-gray-500 lg:text-left lg:text-lg font-normal">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Amet veniam ad.
                     </p>
@@ -111,14 +108,14 @@
                             <li>
                                 <a
                                     href="#service"
-                                    class="text-gray-600 transition hover:text-gray-700/75">
+                                    class="text-gray-600 transition hover:text-gray-700/75 font-normal">
                                     Services
                                 </a>
                             </li>
                             <li>
                                 <a
                                     href="#contact"
-                                    class="text-gray-600 transition hover:text-gray-700/75">
+                                    class="text-gray-600 transition hover:text-gray-700/75 font-normal">
                                     Contact
                                 </a>
                             </li>
@@ -136,7 +133,7 @@
                                     id="instagramLink"
                                     href=""
                                     target="_blank"
-                                    class="text-gray-600 transition hover:text-gray-700/75">
+                                    class="text-gray-600 transition hover:text-gray-700/75 font-normal">
                                     Instagram
                                 </a>
                             </li>
@@ -146,7 +143,7 @@
                                     id="email"
                                     href=""
                                     target="_blank"
-                                    class="text-gray-600 transition hover:text-gray-700/75">
+                                    class="text-gray-600 transition hover:text-gray-700/75 font-normal">
                                     Email
                                 </a>
                             </li>
@@ -157,7 +154,7 @@
 
             <div
                 class="my-4 border-gray-100 pt-6 gap-2 w-full mx-auto max-w-sm lg:flex-row lg:max-w-none grid grid-cols-1 lg:grid-cols-2">
-                <p class="text-s/relaxed text-gray-500">
+                <p class="text-s/relaxed text-gray-500 font-normal">
                     © <span id="watermark"></span>. All rights reserved.
                 </p>
             </div>
@@ -239,6 +236,9 @@
                 email.textContent = decodedData.email
                 email.href = `mailto:${decodedData.email}`
             })
+            document.querySelector("#footer-title").textContent =
+                decodedData.name
+            document.querySelector("#watermark").textContent = decodedData.name
 
             document.querySelectorAll("#description").forEach((description) => {
                 description.textContent = decodedData.description
