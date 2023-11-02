@@ -244,6 +244,8 @@
                 description.textContent = decodedData.description
             })
 
+            document.title = `Portfolio | ${decodedData.name}`
+
             document.getElementById("contact-desc").textContent =
                 decodedData.contactDesc
             document.getElementById("instagramLink").href =
